@@ -14,10 +14,13 @@ app.get('/api/data', (req, res) => res.json({
   message: "Seems to work!",
 }));
 
+// Another GET route
 app.get('/api/morestuff', (req, res) => res.json({
   message: "Also works!",
   moremsg: "stop panicking it works bro"
 }));
+
+// 
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console
