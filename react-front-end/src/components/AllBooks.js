@@ -5,8 +5,15 @@ import { Box } from '@mui/system';
 export default function UserResultList(props) {
   const { currentBooks } = props;
 
+  // To evenly space out the books on display
+  
+  let boxSize = (currentBooks.length === 1) ? 12 : 4;
+  boxSize = (currentBooks.length === 2) ? 6 : boxSize;
+
   const showBooks = currentBooks.map((book,index) => {
-    return <div>{book.id}</div>
+    return (<Grid align="center" item xs={boxSize}>
+    <div>{book.id}</div>
+    </Grid>)
   });
 
   return (
