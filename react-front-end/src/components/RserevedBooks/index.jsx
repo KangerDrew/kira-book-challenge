@@ -28,7 +28,7 @@ export default function ReservedBooks(props) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>Show Reserved Books</Button>
+      <Button onClick={handleOpen} variant="contained" >Show Reserved Books</Button>
       <Modal
         open={open}
         onClose={handleClose}
