@@ -1,8 +1,9 @@
-import './App.css';
+import './App.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AllBooks from './components/AllBooks';
 import ReservedBooks from './components/RserevedBooks';
+import './components/MinorAdjustments.scss'
 
 // Material UI Content
 import Pagination from '@mui/material/Pagination';
@@ -124,6 +125,7 @@ function App() {
       />
       <Pagination count={pageCount} color="primary" page={page} onChange={pageChange} />
       <ReservedBooks bookList={bookList} reserveTrack={reserveTrack} />
+      <div className="app-bottom-spacer"></div>
     </Stack>
   );
 }
