@@ -42,7 +42,11 @@ export default function Checkout(props) {
             </Stack>
           </Stack>
           : 
-          <Button variant="contained" disabled>Out of stock</Button> }
+            <Stack direction="row" spacing={2}>
+              <Button variant="contained" disabled>Out of stock</Button> 
+              <Button variant="contained" color="error" onClick={handleClose}>Close</Button>
+            </Stack>
+          }
       </Stack>
     </Fragment>
   );

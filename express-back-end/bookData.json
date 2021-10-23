@@ -1,6 +1,6 @@
 [
 
-  {"id": 1, "title": "Python Crash Course", "author": "Eric Matthes", "quantity": 5},
+  {"id": 1, "title": "Python Crash Course", "author": "Eric Matthes", "quantity": 5 },
 
   {"id": 2, "title": "Head-First Python", "author": "Paul Barry", "quantity": 2},
 

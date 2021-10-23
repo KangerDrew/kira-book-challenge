@@ -63,11 +63,21 @@ export default function ReservedBooks(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          
+
           {/* Books reserved below */}
           <Grid container justify="center" alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
             {displayBooks}
           </Grid>
+          <Button 
+            variant="contained"
+            color="warning" 
+            onClick={handleClose}
+            sx={{
+              position: "absolute",
+              bottom: "15px",
+              left: "43%"
+            }}
+          >Close</Button>
         </Box>
       </Modal>
     </div>
