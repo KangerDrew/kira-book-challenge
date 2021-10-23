@@ -1,23 +1,23 @@
 [
 
-  {"id": 1, "title": "Python Crash Course", "author": "Eric Matthes", "quantity": 5 },
+  {"id": 1, "title": "Python Crash Course", "author": "Eric Matthes", "quantity": 5, "image": "https://images-na.ssl-images-amazon.com/images/I/51PZ6YIfe9L._SX376_BO1,204,203,200_.jpg"},
 
-  {"id": 2, "title": "Head-First Python", "author": "Paul Barry", "quantity": 2},
+  {"id": 2, "title": "Head-First Python", "author": "Paul Barry", "quantity": 2, "image": "https://images-na.ssl-images-amazon.com/images/I/81Gt2O4FvTL.jpg"},
 
-  {"id": 3, "title": "Invent Your Own Computer Games with Python", "author": "Al Sweigart", "quantity": 1},
+  {"id": 3, "title": "Invent Your Own Computer Games with Python", "author": "Al Sweigart", "quantity": 1, "image": "https://m.media-amazon.com/images/I/51R735T-50L.jpg"},
 
-  {"id": 4, "title": "Think Python: How to Think Like a Computer Scientist", "author": "Allen B. Downey", "quantity": 15},
+  {"id": 4, "title": "Think Python: How to Think Like a Computer Scientist", "author": "Allen B. Downey", "quantity": 15, "image":"https://images-na.ssl-images-amazon.com/images/I/51yWKSfOcfS._SX379_BO1,204,203,200_.jpg"},
 
-  {"id": 5, "title": "Effective Computation in Physics: Field Guide to Research with Python", "author": "Anthony Scopatz, Kathryn D. Huff", "quantity": 7},
+  {"id": 5, "title": "Effective Computation in Physics: Field Guide to Research with Python", "author": "Anthony Scopatz, Kathryn D. Huff", "quantity": 7, "image":"https://images-na.ssl-images-amazon.com/images/I/712MeknfnSL.jpg"},
 
-  {"id": 6, "title": "Learn Python 3 the Hard Way", "author": "Zed A. Shaw", "quantity": 0},
+  {"id": 6, "title": "Learn Python 3 the Hard Way", "author": "Zed A. Shaw", "quantity": 0, "image":"https://images-na.ssl-images-amazon.com/images/I/81UU5A2VLsL.jpg"},
 
-  {"id": 7, "title": "The Vue Handbook", "author": "Flavio Copes", "quantity": 0},
+  {"id": 7, "title": "The Vue Handbook", "author": "Flavio Copes", "quantity": 0, "image":"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547366441i/41040809._UY1277_SS1277_.jpg"},
 
-  {"id": 8, "title": "Vue.js: Up and Running", "author": "Callum Macrae", "quantity": 1},
+  {"id": 8, "title": "Vue.js: Up and Running", "author": "Callum Macrae", "quantity": 1, "image":"https://images-na.ssl-images-amazon.com/images/I/91leSpWmFVL.jpg"},
 
-  {"id": 9, "title": "Fullstack Vue", "author": "Hassan Djirdeh", "quantity": 3},
+  {"id": 9, "title": "Fullstack Vue", "author": "Hassan Djirdeh", "quantity": 3, "image":"https://images-na.ssl-images-amazon.com/images/I/61HG52S4TuL.jpg"},
 
-  {"id": 10, "title": "Vue.js 2 and Bootstrap 4 Web Development", "author": "Olga Filipova", "quantity": 21}
+  {"id": 10, "title": "Vue.js 2 and Bootstrap 4 Web Development", "author": "Olga Filipova", "quantity": 21, "image":"https://images-na.ssl-images-amazon.com/images/I/61H8McGZlJL.jpg"}
 
 ]

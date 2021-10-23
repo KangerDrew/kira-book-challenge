@@ -5,6 +5,7 @@ import Checkout from './Checkout';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import CardMedia from "@mui/material/CardMedia";
 
 // for modal
 import Box from '@mui/material/Box';
@@ -13,7 +14,7 @@ import Modal from '@mui/material/Modal';
 
 export default function Book(props) {
 
-  const { title, bookId, author, reserveTrack, setReserveTrack } = props;
+  const { title, bookId, author, reserveTrack, setReserveTrack, image } = props;
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -33,17 +34,20 @@ export default function Book(props) {
     p: 4,
   };
 
-
   return (
     <Fragment>
       <Card className="single-user-result" sx={{ minHeight: 120, width: 300}}>
-        {/* <CardActionArea onClick={modalDisplay} > */}
-          <CardContent>
-            <div>{title}</div>
-            <div>by {author}</div>
-          </CardContent>
-          <Button onClick={handleOpen} color="secondary" >Reserve This Book</Button>
-        {/* </ CardActionArea> */}
+        <CardMedia 
+          component="img"
+          height="350"
+          width="100"
+          image={image}
+        />
+        <CardContent>
+          <div>{title}</div>
+          <div>by {author}</div>
+        </CardContent>
+        <Button onClick={handleOpen} color="secondary" >Reserve This Book</Button>
       </Card>
 
       {/* Modal to rent the book */}

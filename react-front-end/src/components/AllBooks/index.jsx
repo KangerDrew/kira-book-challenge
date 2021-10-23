@@ -18,6 +18,7 @@ export default function AllBooks(props) {
         author={book.author}
         reserveTrack={reserveTrack}
         setReserveTrack={setReserveTrack}
+        image={book.image}
       />
     </Grid>)
   });

@@ -98,6 +98,8 @@ function App() {
     return;
   };
 
+  console.log(displayBookList)
+
   return (
     <Stack spacing={2} justifyContent="center" alignItems="center">
       <h1>Available Books</h1>
