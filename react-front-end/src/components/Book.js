@@ -15,13 +15,13 @@ export default function Book(props) {
   };
 
   return (
-    <Card className="single-user-result" sx={{ maxWidth: 300 }}>
+    <Card className="single-user-result" sx={{ minHeight: 120, width: 300}}>
        <CardActionArea onClick={modalDisplay} >
         <CardContent>
-          <Typography gutterBottom variant="h3" component="div">
+          <Typography gutterBottom variant="string" component="div">
             {title}
           </Typography>
-          <Typography gutterBottom variant="h4" component="div">
+          <Typography gutterBottom variant="h6" component="div">
             {bookId}
           </Typography>
         </CardContent>

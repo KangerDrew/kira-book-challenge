@@ -14,7 +14,8 @@ import IconButton from '@mui/material/IconButton';
 
 
 function App() {
-  const [bookList, setBookList] = useState([1]);
+  const [bookList, setBookList] = useState([]);
+  const [displayBookList, setDisplayBookList] = useState([]);
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,7 +26,7 @@ function App() {
   // Event handler for changing to different page
   const pageChange = (event, value) => {
     console.log(value);
-    setPage(value);
+    setPage((prev) => value);
   };
 
   // Get books from backend
@@ -34,11 +35,13 @@ function App() {
     .then(results => {
       const returnArr = results.data;
       // Set the max pagination value
-      setPageCount(Math.ceil(returnArr.length / booksPerPage))
+      setPageCount((prev) => Math.ceil(returnArr.length / booksPerPage))
 
-      console.log(returnArr);
-      // Set the bookList state with returned array
-      setBookList([...returnArr]);      
+      // Set the base bookList state with returned array
+      setBookList((prev) => [...returnArr]);
+
+      // Set the displaying bookList
+      setDisplayBookList((prev) => [...returnArr]);
     })
   },[])
 
@@ -48,6 +51,31 @@ function App() {
     event.preventDefault()
     console.log("Your search went through");
     console.log(searchTerm);
+
+    if(!searchTerm) {
+      console.log("string is empty, reset the filtered result");
+      setDisplayBookList((prev) => [...bookList]);
+      setPageCount((prev) => Math.ceil(bookList.length / booksPerPage))
+      return;
+    }
+
+    // If a search term isn't empty, then use for loop to filter by title
+
+    const filteredBooks = [];
+
+    for (const aBook of bookList){
+      const lowercase = aBook.title.toLowerCase(); 
+
+      if (lowercase.includes(searchTerm.toLowerCase())){
+        filteredBooks.push(aBook);
+      }
+    }
+    
+    // Change the displayed books to the filtered result
+    setDisplayBookList((prev) => [...filteredBooks]);
+    setPageCount((prev) => Math.ceil(filteredBooks.length / booksPerPage))
+
+    return;
   };
 
   return (
@@ -66,7 +94,7 @@ function App() {
           />
         </FormControl>
       </form>
-      <AllBooks currentBooks={bookList.slice((page - 1)*booksPerPage, booksPerPage*page)} />
+      <AllBooks currentBooks={displayBookList.slice((page - 1)*booksPerPage, booksPerPage*page)} />
       <Pagination count={pageCount} color="primary" page={page} onChange={pageChange} />
     </Stack>
   );

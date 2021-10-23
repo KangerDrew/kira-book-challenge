@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { Box } from '@mui/system';
 import Book from './Book';
 
-export default function UserResultList(props) {
+export default function AllBooks(props) {
   const { currentBooks } = props;
 
   // To evenly space out the books on display
@@ -12,8 +12,8 @@ export default function UserResultList(props) {
   boxSize = (currentBooks.length === 2) ? 6 : boxSize;
 
   const showBooks = currentBooks.map((book,index) => {
-    return (<Grid align="center" item xs={boxSize}>
-      <Book key={index} title={book.title} bookId={book.id} />
+    return (<Grid key={index} align="center" item xs={boxSize}>
+      <Book title={book.title} bookId={book.id} />
     </Grid>)
   });
 
