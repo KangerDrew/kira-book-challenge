@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Reserved from "./Reserved";
+
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -48,7 +50,12 @@ export default function ReservedBooks(props) {
 
   const displayBooks = filterReserved(bookList, reserveTrack).map((book, index) => {
     return (<Grid key={index} align="center" item xs={6}>
-      <div>{book.title}</div>
+      <Reserved
+        title={book.title}
+        bookId={book.id}
+        reserveTrack={reserveTrack}
+        image={book.image}
+      />
     </Grid>)
   })
 

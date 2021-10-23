@@ -2,7 +2,7 @@ import './App.scss';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AllBooks from './components/AllBooks';
-import ReservedBooks from './components/RserevedBooks';
+import ReservedBooks from './components/ReservedBooks';
 import './components/MinorAdjustments.scss'
 
 // Material UI Content
@@ -103,7 +103,7 @@ function App() {
 
   return (
     <Stack spacing={2} justifyContent="center" alignItems="center">
-      <h1>Available Books</h1>
+      <h1>Books To Checkout</h1>
       <form onSubmit={filterSearch} className="search-button-form">
         <FormControl sx={{ width: '40ch', display: 'flex', alignItems: 'center' }}>
         <TextField
