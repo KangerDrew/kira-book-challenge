@@ -7,7 +7,7 @@ import CardActionArea from '@mui/material/CardActionArea';
 
 export default function Book(props) {
 
-  const { title, bookId } = props;
+  const { title, bookId, author, quantity } = props;
 
   const modalDisplay = function(event) {
     event.preventDefault()
@@ -21,9 +21,11 @@ export default function Book(props) {
           <Typography gutterBottom variant="string" component="div">
             {title}
           </Typography>
+          <div>{author}</div>
           <Typography gutterBottom variant="h6" component="div">
             {bookId}
           </Typography>
+          <div>{quantity}</div>
         </CardContent>
       </ CardActionArea>
     </Card>

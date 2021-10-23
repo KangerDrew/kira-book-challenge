@@ -13,7 +13,12 @@ export default function AllBooks(props) {
 
   const showBooks = currentBooks.map((book,index) => {
     return (<Grid key={index} align="center" item xs={boxSize}>
-      <Book title={book.title} bookId={book.id} />
+      <Book
+        title={book.title}
+        bookId={book.id}
+        author={book.author}
+        quantity={book.quantity}
+      />
     </Grid>)
   });
 
