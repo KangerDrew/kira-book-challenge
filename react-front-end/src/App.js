@@ -2,9 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 function App() {
   const [bookList, setBookList] = useState([]);
+  const [page, setPage] = useState(1);
+
+
+  // Event handler for changing to different page
+
+  const pageChange = (event, value) => {
+    console.log(value);
+    setPage(value);
+  };
+
 
   // Get books from backend
   useEffect(() => {
@@ -15,25 +27,11 @@ function App() {
     })
   },[])
 
-  
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stack spacing={2} justifyContent="center" alignItems="center">
+      <Pagination count={10} color="primary" page={page} onChange={pageChange} />
+    </Stack>
   );
 }
 
