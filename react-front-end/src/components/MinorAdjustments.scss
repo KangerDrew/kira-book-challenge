@@ -1,3 +1,15 @@
 .app-bottom-spacer{
   padding-bottom: 100px;
 }
+
+
+.book-main{
+
+  &-title {
+    font-weight: 900;
+  }
+
+  &-author {
+    font-style: italic;
+  }
+}

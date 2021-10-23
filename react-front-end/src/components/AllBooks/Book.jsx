@@ -44,8 +44,8 @@ export default function Book(props) {
           image={image}
         />
         <CardContent>
-          <div>{title}</div>
-          <div>by {author}</div>
+          <div className="book-main-title">{title}</div>
+          <div className="book-main-author">by {author}</div>
         </CardContent>
         <Button onClick={handleOpen} color="secondary" >Reserve This Book</Button>
       </Card>

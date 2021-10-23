@@ -18,7 +18,8 @@ export default function Reserved(props) {
         image={image}
       />
       <CardContent>
-        <div> # of copes reserved: {reserveTrack[bookId].reserved}</div>
+        <div className="book-main-title">{title}</div>
+        <div className="reserved-books-count"> # of copes reserved: {reserveTrack[bookId].reserved}</div>
       </CardContent>
     </Card>
   );
