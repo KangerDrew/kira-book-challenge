@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AllBooks from './components/AllBooks';
+import ReservedBooks from './components/ReservedBooks';
 
 // Material UI Content
 import Pagination from '@mui/material/Pagination';
@@ -19,6 +19,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [pageCount, setPageCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState("");
+  const [reserveTrack, setReserveTrack] = useState(undefined);
 
   // As per requirement, only 3 books per page will be shown
   const booksPerPage = 3;
@@ -42,6 +43,24 @@ function App() {
 
       // Set the displaying bookList
       setDisplayBookList((prev) => [...returnArr]);
+
+
+      // reserveTrack is an object to keep track of 
+      // which books are reserved or not, as well as
+      // how many remain in stock. We must first iterate
+      // through returnArr.
+
+      const newObj = {};
+
+      for (const aBook of returnArr) {
+        // No book would have been reserved on first render.
+        // Set reserved to 0.
+        newObj[aBook.id] = {quantity: aBook.quantity, reserved: 0 };
+      }
+
+      console.log(newObj);
+      setReserveTrack((prev) => newObj);
+
     })
   },[])
 
@@ -73,13 +92,15 @@ function App() {
     
     // Change the displayed books to the filtered result
     setDisplayBookList((prev) => [...filteredBooks]);
-    setPageCount((prev) => Math.ceil(filteredBooks.length / booksPerPage))
+    setPageCount((prev) => Math.ceil(filteredBooks.length / booksPerPage));
+    setPage(1);
 
     return;
   };
 
   return (
     <Stack spacing={2} justifyContent="center" alignItems="center">
+      <h1>Available Books</h1>
       <form onSubmit={filterSearch} className="search-button-form">
         <FormControl sx={{ width: '40ch', display: 'flex', alignItems: 'center' }}>
         <TextField
@@ -94,8 +115,13 @@ function App() {
           />
         </FormControl>
       </form>
-      <AllBooks currentBooks={displayBookList.slice((page - 1)*booksPerPage, booksPerPage*page)} />
+      <AllBooks 
+        currentBooks={displayBookList.slice((page - 1)*booksPerPage, booksPerPage*page)}
+        reserveTrack={reserveTrack}
+        setReserveTrack={setReserveTrack}
+      />
       <Pagination count={pageCount} color="primary" page={page} onChange={pageChange} />
+      <ReservedBooks />
     </Stack>
   );
 }

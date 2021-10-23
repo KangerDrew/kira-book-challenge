@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import { Box } from '@mui/system';
 import Book from './Book';
