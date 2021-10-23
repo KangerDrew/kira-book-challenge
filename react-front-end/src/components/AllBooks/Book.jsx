@@ -39,14 +39,8 @@ export default function Book(props) {
       <Card className="single-user-result" sx={{ minHeight: 120, width: 300}}>
         {/* <CardActionArea onClick={modalDisplay} > */}
           <CardContent>
-            <Typography gutterBottom variant="string" component="div">
-              {title}
-            </Typography>
-            <div>{author}</div>
-            <Typography gutterBottom variant="h6" component="div">
-              {bookId}
-            </Typography>
-            {reserveTrack ? <div>{reserveTrack[bookId].quantity}</div> : <div/>}
+            <div>{title}</div>
+            <div>by {author}</div>
           </CardContent>
           <Button onClick={handleOpen} color="secondary" >Reserve This Book</Button>
         {/* </ CardActionArea> */}

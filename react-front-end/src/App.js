@@ -121,7 +121,7 @@ function App() {
         setReserveTrack={setReserveTrack}
       />
       <Pagination count={pageCount} color="primary" page={page} onChange={pageChange} />
-      <ReservedBooks />
+      <ReservedBooks bookList={bookList} reserveTrack={reserveTrack} />
     </Stack>
   );
 }

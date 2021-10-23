@@ -4,13 +4,15 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-
+import Grid from '@mui/material/Grid';
 
 export default function ReservedBooks(props) {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const { bookList, reserveTrack } = props;
 
   const style = {
     position: 'absolute',
@@ -26,6 +28,31 @@ export default function ReservedBooks(props) {
     overflow: 'scroll'
   };
 
+  const filterReserved = function(bookList, reserveTrack){
+    
+    if (!reserveTrack){
+      return [];
+    }
+
+    const retArr = [];
+
+    for(const book of bookList) {
+      if (reserveTrack[book.id].reserved > 0) {
+        retArr.push(book);
+      }
+    }
+
+    return retArr;
+
+  };
+
+  const displayBooks = filterReserved(bookList, reserveTrack).map((book, index) => {
+    return (<Grid key={index} align="center" item xs={6}>
+      <div>{book.title}</div>
+    </Grid>)
+  })
+
+
   return (
     <div>
       <Button onClick={handleOpen} variant="contained" >Show Reserved Books</Button>
@@ -36,12 +63,11 @@ export default function ReservedBooks(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-          </Typography>
+          
+          {/* Books reserved below */}
+          <Grid container justify="center" alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            {displayBooks}
+          </Grid>
         </Box>
       </Modal>
     </div>
