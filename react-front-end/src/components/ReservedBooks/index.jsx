@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
 
 export default function ReservedBooks(props) {
 
@@ -16,19 +17,6 @@ export default function ReservedBooks(props) {
 
   const { bookList, reserveTrack } = props;
 
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '60%',
-    height: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-    overflow: 'scroll'
-  };
 
   const filterReserved = function(bookList, reserveTrack){
     
@@ -59,6 +47,19 @@ export default function ReservedBooks(props) {
     </Grid>)
   })
 
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: (displayBooks.length > 0 ? "60%" : 300),
+    maxHeight: 500,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+    overflow: 'scroll'
+  };
 
   return (
     <div>
@@ -70,21 +71,14 @@ export default function ReservedBooks(props) {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-
-          {/* Books reserved below */}
-          <Grid container justify="center" alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-            {displayBooks}
-          </Grid>
-          <Button 
-            variant="contained"
-            color="warning" 
-            onClick={handleClose}
-            sx={{
-              position: "absolute",
-              bottom: "15px",
-              left: "43%"
-            }}
-          >Close</Button>
+          <Stack spacing={2} justifyContent="center" alignItems="center">
+            {displayBooks.length > 0 ?
+            <Grid container justify="center" alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              {displayBooks}
+            </Grid>
+            : <div>You don't have any books reserved</div>}
+            <Button variant="contained" color="warning" onClick={handleClose}>Close</Button>
+          </Stack>
         </Box>
       </Modal>
     </div>
