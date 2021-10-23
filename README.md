@@ -6,6 +6,12 @@ This is a simple app to show books from the provided data.
 
 !["Demo"](https://github.com/KangerDrew/kira-book-challenge/blob/master/react-front-end/docs/demo.gif)
 
+## Primary Dependencies
+
+- axios
+- material ui
+- sass
+
 ## How to start the app
 
 1. Fork this repository, then clone your fork of this repository to your local machine.
