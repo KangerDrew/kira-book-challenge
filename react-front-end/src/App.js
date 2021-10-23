@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AllBooks from './components/AllBooks';
-import ReservedBooks from './components/ReservedBooks';
+import ReservedBooks from './components/RserevedBooks';
 
 // Material UI Content
 import Pagination from '@mui/material/Pagination';

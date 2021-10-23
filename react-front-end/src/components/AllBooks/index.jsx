@@ -3,7 +3,7 @@ import { Box } from '@mui/system';
 import Book from './Book';
 
 export default function AllBooks(props) {
-  const { currentBooks } = props;
+  const { currentBooks, reserveTrack, setReserveTrack } = props;
 
   // To evenly space out the books on display
 
@@ -16,7 +16,8 @@ export default function AllBooks(props) {
         title={book.title}
         bookId={book.id}
         author={book.author}
-        quantity={book.quantity}
+        reserveTrack={reserveTrack}
+        setReserveTrack={setReserveTrack}
       />
     </Grid>)
   });
