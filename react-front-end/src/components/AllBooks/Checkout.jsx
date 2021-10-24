@@ -15,7 +15,6 @@ export default function Checkout(props) {
   const reserveBook = function() {
 
     const afterCheckout = {quantity:(reserveTrack[bookId].quantity - 1), reserved:(reserveTrack[bookId].reserved + 1)}
-    console.log("afterCheckout;", afterCheckout);
 
     const newReserve = {...reserveTrack}
 
@@ -24,9 +23,6 @@ export default function Checkout(props) {
     setReserveTrack(prev => newReserve)
     handleClose();
   }
-
-  console.log("Were in Checkout Component", reserveTrack);
-  console.log(`Reserve status for bookId ${bookId}`, reserveTrack[bookId]);
 
   return (
     <Fragment>

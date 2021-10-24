@@ -27,7 +27,6 @@ function App() {
 
   // Event handler for changing to different page
   const pageChange = (event, value) => {
-    console.log(value);
     setPage((prev) => value);
   };
 
@@ -59,7 +58,6 @@ function App() {
         newObj[aBook.id] = {quantity: aBook.quantity, reserved: 0 };
       }
 
-      console.log(newObj);
       setReserveTrack((prev) => newObj);
 
     })
@@ -69,11 +67,8 @@ function App() {
 
   const filterSearch = function(event){
     event.preventDefault()
-    console.log("Your search went through");
-    console.log(searchTerm);
 
     if(!searchTerm) {
-      console.log("string is empty, reset the filtered result");
       setDisplayBookList((prev) => [...bookList]);
       setPageCount((prev) => Math.ceil(bookList.length / booksPerPage))
       return;
@@ -99,7 +94,6 @@ function App() {
     return;
   };
 
-  console.log(displayBookList)
 
   return (
     <Stack spacing={2} justifyContent="center" alignItems="center">

@@ -10,16 +10,6 @@ app.use(express.urlencoded({
 }));
 app.use(express.static('public'));
 
-// Sample GET route
-app.get('/api/data', (req, res) => res.json({
-  message: "Seems to work!",
-}));
-
-// Another GET route
-app.get('/api/morestuff', (req, res) => res.json({
-  message: "Also works!",
-  moremsg: "stop panicking it works bro"
-}));
 
 // Book data GET route
 app.get('/api/books', (req,res) => {
