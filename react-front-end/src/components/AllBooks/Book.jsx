@@ -4,7 +4,6 @@ import Checkout from './Checkout';
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
 import CardMedia from "@mui/material/CardMedia";
 
 // for modal

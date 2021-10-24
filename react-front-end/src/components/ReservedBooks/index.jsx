@@ -4,7 +4,6 @@ import Reserved from "./Reserved";
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
