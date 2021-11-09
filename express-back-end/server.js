@@ -14,7 +14,10 @@ app.use(express.static('public'));
 // Book data GET route
 app.get('/api/books', (req,res) => {
 
-  const search = req.query.search;
+  res.json(bookData);
+})
+
+app.get('/api/booktest', (req,res) => {
 
   res.json(bookData);
 })

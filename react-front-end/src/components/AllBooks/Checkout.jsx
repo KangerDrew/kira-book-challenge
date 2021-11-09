@@ -10,6 +10,9 @@ export default function Checkout(props) {
 
   const { title, bookId, reserveTrack, setReserveTrack, handleClose } = props;
 
+  // A boolean to check if there are any copies avaialbe for checkout
+  // If no copies are available, the button for checkout will be grayed out
+
   const available = reserveTrack[bookId].quantity > 0 ? true : false;
 
   const reserveBook = function() {
